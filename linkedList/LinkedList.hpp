@@ -40,6 +40,23 @@ bool LinkedList<T>::search(T value) const
 {
 	Node<T>* temp = m_front;
 	bool isFound = false;
+	int sizecheck=0;
+	if(m_size!=0)
+	{
+		
+		do{
+			if(temp->getValue()==value)
+			{
+		 		isFound= true;
+			}
+			else
+			{
+				temp=temp->getNext();
+				sizecheck=sizecheck+1;
+			}
+		}while(sizecheck<m_size);
+	}
+		
 
 	/** TODO 
 		Fix this method
